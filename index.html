@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12283f">
+  <meta name="description" content="Консультация по банкротству физических лиц: разбор ситуации с долгами, ответы на вопросы и запись к юристу.">
+  <title>Арина, консультант по банкротству</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow--one" aria-hidden="true"></div>
+  <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Консультация по банкротству, на главную">
+      <span class="brand-mark" aria-hidden="true">Ю</span>
+      <span class="brand-text">
+        <strong>Консультация по банкротству</strong>
+        <small>списание долгов</small>
+      </span>
+    </a>
+
+    <nav class="topnav" aria-label="Разделы">
+      <a href="#chat">Консультация</a>
+      <a href="#trust">Почему нам доверяют</a>
+    </nav>
+
+    <div class="top-actions">
+      <span class="status-pill"><i aria-hidden="true"></i> На связи</span>
+      <button class="btn btn-ghost" id="aboutBtn" type="button">О консультации</button>
+      <button class="btn btn-primary" type="button" data-open-lead><span class="top-cta-full">Записаться</span><span class="top-cta-short">Заявка</span></button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="side side-left" aria-label="О консультанте и голосовые настройки">
+      <section class="agent-card">
+        <div class="avatar-wrap" id="avatarWrap">
+          <div class="avatar" aria-hidden="true">
+            <svg viewBox="0 0 120 120" role="img" aria-label="Арина">
+              <defs>
+                <linearGradient id="avatarBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1d3b59"/>
+                  <stop offset="1" stop-color="#0f2338"/>
+                </linearGradient>
+                <linearGradient id="avatarGold" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e0bf74"/>
+                  <stop offset="1" stop-color="#b8892f"/>
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="58" fill="url(#avatarBg)"/>
+              <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(224,191,116,.24)" stroke-width="1"/>
+              <path d="M24 118c2-25 17-36 36-36s34 11 36 36" fill="#f4efe6"/>
+              <path d="M42 116l7-26 11 9 11-9 7 26" fill="#17324d"/>
+              <path d="M52 88h16v16H52z" fill="#e8c7ad"/>
+              <ellipse cx="60" cy="62" rx="24" ry="28" fill="#f1cfb6"/>
+              <path d="M34 64c-1-25 11-38 26-38s27 13 26 38c-4-13-13-20-26-20S38 51 34 64z" fill="#1b2d41"/>
+              <path d="M35 62c-3 16 3 27 11 32-9-2-15-12-13-27z" fill="#1b2d41"/>
+              <path d="M85 62c3 16-3 27-11 32 9-2 15-12 13-27z" fill="#1b2d41"/>
+              <circle cx="50" cy="64" r="2.1" fill="#23384d"/>
+              <circle cx="70" cy="64" r="2.1" fill="#23384d"/>
+              <path d="M55 76c3 2.4 7 2.4 10 0" fill="none" stroke="#b97862" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M36 59c-8 3-11 11-9 20" fill="none" stroke="#263c52" stroke-width="4" stroke-linecap="round"/>
+              <rect x="28" y="68" width="9" height="16" rx="4.5" fill="url(#avatarGold)"/>
+              <path d="M33 84c5 7 11 10 17 10" fill="none" stroke="url(#avatarGold)" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="50" cy="94" r="2.6" fill="#b8892f"/>
+              <path d="M44 108l5-13 11 8 11-8 5 13" fill="none" stroke="#d9b35f" stroke-width="1.2" opacity=".55"/>
+            </svg>
+          </div>
+          <span class="avatar-status" aria-label="На связи"></span>
+          <div class="voice-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h1>Арина</h1>
+        <p class="agent-role">консультант по банкротству</p>
+        <div class="agent-badges">
+          <span>Разберёмся</span>
+          <span>Бесплатно</span>
+        </div>
+        <p class="agent-note">Задам несколько вопросов, подскажу варианты и передам вашу ситуацию юристу.</p>
+      </section>
+
+      <section class="card voice-card">
+        <div class="card-head">
+          <h2>Голосовой режим</h2>
+          <label class="switch" title="Озвучивать ответы">
+            <input type="checkbox" id="voiceToggle" checked>
+            <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+            <span class="sr-only">Озвучивать ответы</span>
+          </label>
+        </div>
+        <div class="voice-row">
+          <label for="voiceSelect">Голос</label>
+          <select id="voiceSelect" aria-label="Выбрать голос">
+            <option value="ru-RU-SvetlanaNeural">Светлана</option>
+            <option value="browser">Голос браузера</option>
+          </select>
+        </div>
+        <div class="voice-row voice-row--range">
+          <label for="rateRange">Темп</label>
+          <input type="range" id="rateRange" min="-15" max="15" step="5" value="0" aria-label="Темп речи">
+          <output id="rateOut" for="rateRange">1×</output>
+        </div>
+        <p class="hint" id="ttsHint">Если звук не нужен, выключите его кнопкой «Звук вкл» в шапке чата.</p>
+      </section>
+
+      <section class="card topics">
+        <h2>С чего начать</h2>
+        <button type="button" data-topic="Сколько стоит банкротство?">
+          <span>Сколько стоит</span><i aria-hidden="true">→</i>
+        </button>
+        <button type="button" data-topic="Какие последствия банкротства?">
+          <span>Последствия</span><i aria-hidden="true">→</i>
+        </button>
+        <button type="button" data-topic="Что будет с квартирой?">
+          <span>Что будет с квартирой</span><i aria-hidden="true">→</i>
+        </button>
+        <button type="button" data-topic="Боюсь, что долги не спишут">
+          <span>Боюсь, что не спишут</span><i aria-hidden="true">→</i>
+        </button>
+        <button type="button" data-topic="Чем отличается МФЦ от суда?">
+          <span>МФЦ или суд</span><i aria-hidden="true">→</i>
+        </button>
+      </section>
+
+    </aside>
+
+    <section class="chat-shell" id="chat" aria-label="Чат с консультантом">
+      <header class="chat-head">
+        <div class="chat-title">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <div>
+            <h2>Разговор с консультантом</h2>
+            <p id="chatStatus">Арина на связи</p>
+          </div>
+        </div>
+        <div class="chat-tools">
+          <button class="sound-pill" id="soundBtn" type="button" aria-label="Выключить звук" title="Выключить звук">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+              <path id="soundWave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path id="soundSlash" d="M4 4l16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" hidden/>
+            </svg>
+            <span id="soundLabel">Звук вкл</span>
+          </button>
+          <button class="icon-btn" id="restartBtn" type="button" aria-label="Начать разговор заново" title="Начать заново">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 2 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4 4v6h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="mobile-progress" aria-hidden="true">
+        <div class="mobile-progress__top"><span>Ваша ситуация</span><b id="mobileProgressLabel">0%</b></div>
+        <div class="progress progress--slim"><div id="mobileProgressBar"></div></div>
+      </div>
+
+      <div class="chat-scroll" id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+      <div class="typing" id="typing" hidden>
+        <span class="typing-avatar" aria-hidden="true">А</span>
+        <span class="typing-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <em>Арина печатает…</em>
+      </div>
+
+      <div class="quick-replies" id="quickReplies" aria-label="Быстрые ответы"></div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <button class="mic-btn" id="micBtn" type="button" aria-label="Говорить" title="Говорить">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+        <textarea id="input" rows="1" maxlength="2000" placeholder="Напишите или скажите…" aria-label="Сообщение"></textarea>
+        <button class="send-btn" type="submit" aria-label="Отправить" title="Отправить">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-3-6-7-2z" fill="currentColor"/></svg>
+        </button>
+      </form>
+      <div class="composer-note">
+        <span>Enter: отправить, Shift+Enter: новая строка</span>
+        <span>Если вопрос сложный, Арина передаст его юристу.</span>
+      </div>
+    </section>
+
+    <aside class="side side-right" aria-label="Ситуация и заявка">
+      <section class="card situation">
+        <div class="card-head">
+          <h2>Ваша ситуация</h2>
+          <span class="progress-label" id="progressLabel">0%</span>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <ul class="slot-list" id="slotList">
+          <li data-slot="debt"><span>Сумма долга</span><b>не указана</b></li>
+          <li data-slot="overdue"><span>Просрочка</span><b>не указана</b></li>
+          <li data-slot="income"><span>Доход</span><b>не указан</b></li>
+          <li data-slot="property"><span>Имущество</span><b>не указано</b></li>
+        </ul>
+        <p class="hint">Заполняется по ходу разговора. Изменить можно в чате.</p>
+      </section>
+
+      <section class="cta-card">
+        <span class="cta-kicker">Бесплатно, без обязательств</span>
+        <h2>Поговорить с юристом</h2>
+        <p>Юрист проверит документы, имущество и сделки. Скажет, подходит ли банкротство и какой путь выбрать.</p>
+        <button class="btn btn-gold" type="button" data-open-lead>Записаться на консультацию</button>
+        <small>Оставьте заявку, и мы свяжемся с вами.</small>
+      </section>
+
+      <section class="card sources-card" id="trust">
+        <h2>Почему нам доверяют</h2>
+        <ul class="check-list">
+          <li>8 лет практики и более 5 000 дел</li>
+          <li>17 филиалов по России</li>
+          <li>Бесплатная консультация 30–40 минут</li>
+          <li>Честно говорим о рисках</li>
+        </ul>
+        <button class="link-btn" id="sourcesBtn" type="button">Нормативные акты <span aria-hidden="true">→</span></button>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Юридическая практика</span>
+    <span>Информация носит ознакомительный характер и не является индивидуальной юридической консультацией. Решение о банкротстве принимает суд.</span>
+  </footer>
+
+  <dialog class="dialog" id="leadDialog" aria-labelledby="leadTitle">
+    <div class="dialog-card">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Закрыть">×</button>
+      <div class="dialog-head">
+        <span class="dialog-kicker">Бесплатная консультация</span>
+        <h2 id="leadTitle">Передать ситуацию юристу</h2>
+        <p>Оставьте контакт, и юрист свяжется с вами. Это бесплатно и ни к чему не обязывает.</p>
+      </div>
+      <div class="lead-situation" id="leadSituation" hidden></div>
+      <form id="leadForm" class="lead-form">
+        <div class="field">
+          <label for="leadName">Как к вам обращаться</label>
+          <input id="leadName" name="name" type="text" placeholder="Имя" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="leadContact">Телефон или e-mail</label>
+          <input id="leadContact" name="contact" type="text" placeholder="+7 900 000-00-00 или mail@example.ru" maxlength="200" required>
+        </div>
+        <div class="field">
+          <label for="leadTime">Удобное время</label>
+          <select id="leadTime" name="preferred_time">
+            <option>Любое</option>
+            <option>Утро (9:00–12:00)</option>
+            <option>День (12:00–17:00)</option>
+            <option>Вечер (17:00–20:00)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="leadComment">Комментарий <span>необязательно</span></label>
+          <textarea id="leadComment" name="comment" rows="2" maxlength="1000" placeholder="Коротко о ситуации"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="leadConsent" required>
+          <span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span>
+        </label>
+        <p class="form-error" id="leadError" role="alert" hidden></p>
+        <button class="btn btn-primary btn-wide" type="submit" id="leadSubmit">Отправить заявку</button>
+        <p class="form-note">Не отправляйте паспортные данные и номера карт. Для первой консультации они не нужны.</p>
+      </form>
+      <div class="lead-success" id="leadSuccess" hidden>
+        <span class="success-check" aria-hidden="true">✓</span>
+        <h3>Заявка принята</h3>
+        <p id="leadSuccessText">Спасибо! Юрист свяжется с вами в удобное время.</p>
+        <button class="btn btn-ghost" type="button" data-close-dialog>Вернуться в чат</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="dialog dialog--wide" id="sourcesDialog" aria-labelledby="sourcesTitle">
+    <div class="dialog-card">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Закрыть">×</button>
+      <div class="dialog-head">
+        <span class="dialog-kicker">Прозрачность</span>
+        <h2 id="sourcesTitle">Нормативные акты и материалы</h2>
+        <p>Ответы опираются на законы и материалы практики. Актуально на 16 ноября 2026 года.</p>
+      </div>
+      <div id="sourcesList" class="sources-list"><p class="muted">Загрузка…</p></div>
+    </div>
+  </dialog>
+
+  <dialog class="dialog" id="aboutDialog" aria-labelledby="aboutTitle">
+    <div class="dialog-card">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Закрыть">×</button>
+      <div class="dialog-head">
+        <span class="dialog-kicker">Как проходит консультация</span>
+        <h2 id="aboutTitle">Арина, консультант по банкротству</h2>
+        <p>Она поможет подготовиться к консультации и ответит на базовые вопросы. Индивидуальное заключение даёт юрист после проверки документов.</p>
+      </div>
+      <div class="about-grid">
+        <div><b>Что делает</b><p>Собирает сумму долга, просрочку, доход и имущество. Отвечает на вопросы и передаёт заявку юристу.</p></div>
+        <div><b>Чего не делает</b><p>Не гарантирует списание, не советует скрывать имущество и не считает точную стоимость без анализа.</p></div>
+        <div><b>Голос</b><p>Ответы можно слушать. Используется голос Светланы или голос браузера. Звук отключается кнопкой в шапке чата.</p></div>
+        <div><b>Данные</b><p>Не отправляйте паспортные данные и номера карт. Заявка сохраняется и передаётся специалисту.</p></div>
+      </div>
+      <button class="btn btn-primary btn-wide" type="button" data-open-lead>Записаться на консультацию</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="static-data.js?v=3" defer></script>
+  <script src="static-engine.js?v=3" defer></script>
+  <script src="app.js?v=3" defer></script>
+</body>
+</html>
